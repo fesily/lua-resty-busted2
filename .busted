@@ -1,0 +1,6 @@
+return {
+    default = {
+        cpath = "lib/?.so;",
+        lpath = "lib/?.lua;lib/?/init.lua;",
+    }
+}
