@@ -3,7 +3,7 @@
 if not ngx then
     local current = debug.getinfo(1).source:sub(2)
     local shell = ([[resty %s %s]]):format(current, table.concat(arg, ' '))
-    print('not find ngx, restart from shell:', shell)
+    io.stderr:write('not find ngx, restart from shell:', shell, '\n')
     os.execute(shell)
     os.exit(0)
 end

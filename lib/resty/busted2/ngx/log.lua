@@ -10,8 +10,15 @@ end
 local old_ngx_log = ngx.log
 ngx.log = function(level, ...)
     local t = table.pack(...)
-    for i, v in ipairs(t) do
-        t[i] = tostring(v)
+    for i = 1, t.n, 1 do
+        local v = t[i]
+        if type(v) == 'nil' then
+            t[i] = 'nil'
+        elseif type(v) == 'cdata' and v == ngx.null then
+            t[i] = 'null'
+        else
+            t[i] = tostring(v)
+        end
     end
 
     if level < ngx.ERR and level > ngx.STDERR then
