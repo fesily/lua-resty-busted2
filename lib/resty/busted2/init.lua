@@ -38,4 +38,4 @@ end
 
 --##endregion
 
-require 'busted.runner' ({ standalone = false })
+return require 'busted.runner'

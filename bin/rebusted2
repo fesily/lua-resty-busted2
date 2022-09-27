@@ -8,4 +8,4 @@ if not ngx then
     os.exit(0)
 end
 
-require 'resty.busted2'
+require 'resty.busted2' ({ standalone = false })

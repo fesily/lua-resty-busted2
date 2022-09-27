@@ -22,7 +22,7 @@
             "name": "Debug1",
             "program": "${file}",
             "luaexe": "resty",
-            "arg0": ["-e","arg[1]=arg[0];arg[0]='busted2';require 'resty.busted2'"," "],
+            "arg0": ["-e","arg[1]=arg[0];arg[0]='busted2';require 'resty.busted2'({standalone=false})"],
             "luaVersion": "jit",
             "cpath": null,
             "path": null,
