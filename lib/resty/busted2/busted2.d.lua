@@ -36,4 +36,16 @@ local ngx_log_assert = {}
 ---@overload fun(pattern:string|string[], message?:string)
 function ngx_log_assert.error_log(pattern, level, message) end
 
+---@class luassert.internal
+local luassert = {}
 
+---comment check table length
+---@param table table
+---@param length number
+---@param message? string
+function luassert.length(table, length, message) end
+
+---comment check is cdata
+---@param obj any
+---@param message? string
+function luassert.cdata(obj,message) end

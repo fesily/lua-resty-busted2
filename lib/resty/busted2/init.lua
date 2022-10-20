@@ -34,6 +34,16 @@ do
     local function is_cdata(state, arguments, level) return is_type(state, arguments, level, "cdata") end
 
     assert:register('assertion', 'cdata', is_cdata, "assertion.same.positive", "assertion.same.negative")
+    local function length(state, arguments, level)
+        set_failure_message(state, arguments[3])
+        local t = arguments[1]
+        local length = arguments[2]
+        assert(type(t) == 'table')
+        assert(type(length) == 'number')
+        return arguments.n > 1 and #arguments[1] == length
+    end
+
+    assert:register('assertion', 'length', length, 'assertion.same.positive', "assertion.same.negative")
 end
 
 --##endregion
