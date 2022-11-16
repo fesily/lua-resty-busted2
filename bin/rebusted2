@@ -7,5 +7,5 @@ if not ngx then
     os.execute(shell)
     os.exit(0)
 end
-require 'lib.resty.busted2.luarocks_path'
+require 'resty.busted2.luarocks_path'
 require 'resty.busted2' ({ standalone = false })
