@@ -1,5 +1,5 @@
 local package_name = "lua-resty-busted2"
-local package_version = "0.1.3"
+local package_version = "0.2.0"
 local rockspec_revision = "0"
 local github_account_name = "fesily"
 local github_repo_name = package_name
