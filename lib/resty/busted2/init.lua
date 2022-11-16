@@ -1,3 +1,4 @@
+require 'lib.resty.busted2.luarocks_path'
 ngx.exit = function() end
 
 --- disable _G write guard
