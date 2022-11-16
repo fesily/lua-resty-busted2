@@ -1,5 +1,5 @@
 --##region check luarocks path
-do
+return function()
     local pipe = require 'ngx.pipe'
     local proc, err = pipe.spawn({ "sh", "-c", 'luarocks path' })
     if not proc then
