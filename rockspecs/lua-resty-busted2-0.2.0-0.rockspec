@@ -57,6 +57,7 @@ build = {
    modules = {
       ["resty.busted2.busted2.d"] = "lib/resty/busted2/busted2.d.lua",
       ["resty.busted2.execute"] = "lib/resty/busted2/execute.lua",
+      ["resty.busted2.luarocks_path"] = "lib/resty/busted2/luarocks_path.lua",
       ["resty.busted2.init"] = "lib/resty/busted2/init.lua",
       ["resty.busted2.languages.en"] = "lib/resty/busted2/languages/en.lua",
       ["resty.busted2.languages.zh"] = "lib/resty/busted2/languages/zh.lua",
