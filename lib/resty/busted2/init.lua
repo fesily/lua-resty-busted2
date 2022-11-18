@@ -1,3 +1,4 @@
+require 'resty.busted2.luarocks_path'
 ngx.exit = function() end
 
 --- disable _G write guard
@@ -8,7 +9,6 @@ end
 
 local execute = require 'busted.execute'
 package.loaded['busted.execute'] = function(busted)
-    require 'resty.busted2.luarocks_path'()
     require 'resty.busted2.execute' (busted)
     return execute(busted)
 end

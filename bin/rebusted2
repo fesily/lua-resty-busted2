@@ -2,10 +2,15 @@
 
 if not ngx then
     local current = debug.getinfo(1).source:sub(2)
+    -- filter arg with space char
+    for i, v in ipairs(arg) do
+        if v:find("%s") ~= nil then
+            arg[i] = '"' .. v .. '"'
+        end
+    end
     local shell = ([[resty %s %s]]):format(current, table.concat(arg, ' '))
     io.stderr:write('not find ngx, restart from shell:', shell, '\n')
     os.execute(shell)
     os.exit(0)
 end
-require 'resty.busted2.luarocks_path'
 require 'resty.busted2' ({ standalone = false })
