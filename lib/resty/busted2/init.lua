@@ -1,3 +1,9 @@
+local autoexit = false
+if arg[0]:find("/resty_", 1, true) == nil and arg[0]:find("rebusted2", 1, true) == nil then
+    arg[1] = arg[0]
+    arg[0] = 'rebusted2'
+    autoexit = true
+end
 require 'resty.busted2.luarocks_path'
 ngx.exit = function() end
 
@@ -49,4 +55,10 @@ end
 
 --##endregion
 
-return require 'busted.runner'
+local fn = require 'busted.runner'
+return function(...)
+    fn(...)
+    if autoexit then
+        os.exit(0)
+    end
+end

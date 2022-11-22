@@ -1,0 +1,13 @@
+{
+    "Lua.runtime.version": "LuaJIT",
+    "Lua.diagnostics.globals": [
+        "ngx"
+    ],
+    "Lua.workspace.library": [
+        "${3rd}/OpenResty/library",
+        "${3rd}/OpenResty/busted",
+        "${3rd}/OpenResty/luassert",
+        "/usr/local/share/lua/5.1",
+    ],
+    "Lua.workspace.checkThirdParty": false,
+}
