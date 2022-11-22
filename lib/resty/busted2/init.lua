@@ -1,7 +1,12 @@
 local autoexit = false
 if arg[0]:find("/resty_", 1, true) == nil and arg[0]:find("rebusted2", 1, true) == nil then
-    arg[1] = arg[0]
-    arg[0] = 'rebusted2'
+    local new_t = {}
+    for i = 2, #arg + 1, 1 do
+        new_t[i] = arg[i - 1]
+    end
+    new_t[1] = arg[0]
+    new_t[0] = 'rebusted2'
+    arg = new_t
     autoexit = true
 end
 require 'resty.busted2.luarocks_path'
