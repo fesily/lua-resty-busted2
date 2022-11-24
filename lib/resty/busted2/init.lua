@@ -1,5 +1,5 @@
 local autoexit = false
-if arg[0]:find("/resty_", 1, true) == nil and arg[0]:find("rebusted2", 1, true) == nil then
+if arg[0] and arg[0]:find("/resty_", 1, true) == nil and arg[0]:find("rebusted2", 1, true) == nil then
     local new_t = {}
     for i = 2, #arg + 1, 1 do
         new_t[i] = arg[i - 1]
