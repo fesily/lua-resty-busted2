@@ -24,14 +24,13 @@ ngx.log = function(level, ...)
     if level < ngx.ERR and level > ngx.STDERR then
         error(table.concat(t, ''), 2)
     end
-    if level == ngx.STDERR then
-        return old_ngx_log(level, ...)
+    if level ~= ngx.STDERR then
+        local log = astate.get_parameter('ngx_log' .. level)
+        if log then
+            log[#log + 1] = table.concat(t, '')
+        end
     end
-
-    local log = astate.get_parameter('ngx_log' .. level)
-    if log then
-        log[#log + 1] = table.concat(t, '')
-    end
+    return old_ngx_log(level, ...)
 end
 
 local _M = {}
